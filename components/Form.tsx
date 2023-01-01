@@ -16,8 +16,8 @@ function renderBtn(status: FormProps["status"]) {
       return <LoadingBtn />;
     default:
       return (
-        <button className="btn btn-primary normal-case ml-2" type="submit">
-          Go!
+        <button className="btn btn-primary normal-case ml-2"  style={{minWidth: "74px"}} type="submit">
+          Submit
         </button>
       );
       break;

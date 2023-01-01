@@ -2,22 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'replicate.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'replicate.delivery',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    domains: ['replicate.com', 'replicate.delivery', 'images.unsplash.com']
   },
-  
 }
 
 module.exports = nextConfig
