@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log("on the server what is it", req.body.audio)
     const response = await fetch("https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
@@ -10,10 +13,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       body: JSON.stringify({
         // Pinned to a specific version of Stable Diffusion
         // See https://replicate.com/stability-ai/stable-diffussion/versions
-        version: "6359a0cab3ca6e4d3320c33d79096161208e9024d174b2311e5a21b6c7e1131c",
+        version: "30414ee7c4fffc37e260fcab7842b5be470b9b840f2b608f5baa9bbef9a259ed",
   
-        // Text submitted by frontend
-        input: { prompt: req.body.prompt },
+        // audio submitted by frontend
+        input: { audio: req.body.audio },
       }),
     });
   

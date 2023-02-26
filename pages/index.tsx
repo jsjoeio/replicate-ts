@@ -8,15 +8,15 @@ export default function Home() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState<null | string>(null);
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
+  const handleSubmit = async (audio: string) => {
+    console.log("waht is audio", audio)
     const response = await fetch("/api/predictions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        prompt: e.target.prompt.value,
+        audio
       }),
     });
     let prediction = await response.json();
